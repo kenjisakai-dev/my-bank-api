@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     let account = req.body;
     const data = JSON.parse(await readFile(global.fileName));
 
-    account = { id: ++data.nextId, ...account };
+    account = { id: data.nextId++, ...account };
     data.accounts.push(account);
 
     await writeFile(global.fileName, JSON.stringify(data, null, 2));
@@ -38,6 +38,19 @@ router.get('/:id', async (req, res) => {
       (account) => account.id === parseInt(req.params.id)
     );
     res.send(account);
+  } catch (err) {
+    res.status(400).send({ erro: err.message });
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile(global.fileName));
+    data.accounts = data.accounts.filter(
+      (account) => account.id !== parseInt(req.params.id)
+    );
+    await writeFile(global.fileName, JSON.stringify(data, null, 2));
+    res.send(`O ID ${req.params.id} foi deletado com sucesso.`);
   } catch (err) {
     res.status(400).send({ erro: err.message });
   }

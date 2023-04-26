@@ -14,7 +14,7 @@ app.listen(3000, async () => {
     console.log('API Started!');
   } catch (err) {
     const initialJson = {
-      nextId: 0,
+      nextId: 1,
       accounts: [],
     };
     await writeFile(global.fileName, JSON.stringify(initialJson, null, 2))
