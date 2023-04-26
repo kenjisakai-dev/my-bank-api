@@ -56,4 +56,40 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+router.put('/', async (req, res) => {
+  try {
+    const account = req.body;
+
+    const data = JSON.parse(await readFile(global.fileName));
+    const index = data.accounts.findIndex(
+      (acc) => acc.id === parseInt(account.id)
+    );
+
+    data.accounts[index] = account;
+
+    await writeFile(global.fileName, JSON.stringify(data, null, 2));
+    res.send(account);
+  } catch (err) {
+    res.status(400).send({ erro: err.message });
+  }
+});
+
+router.patch('/updateBalance', async (req, res) => {
+  try {
+    const account = req.body;
+
+    const data = JSON.parse(await readFile(global.fileName));
+    const index = data.accounts.findIndex(
+      (acc) => acc.id === parseInt(account.id)
+    );
+
+    data.accounts[index].balance = account.balance;
+
+    await writeFile(global.fileName, JSON.stringify(data, null, 2));
+    res.send(data.accounts[index]);
+  } catch (err) {
+    res.status(400).send({ erro: err.message });
+  }
+});
+
 export default router;
