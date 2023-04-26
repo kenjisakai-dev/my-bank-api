@@ -15,7 +15,7 @@ Inicie a API:
 nodemon index.js
 ```
 
-Pronto, agora podemos usar os endpoints:<br>
+Pronto, vai criar o arquivo accounts.json e já podemos usar os endpoints:<br>
 -POST req.body: http://localhost:3000/accounts - criar conta<br>
 -DELETE req.params.id: http://localhost:3000/accounts/{idConta} - excluir conta<br>
 -GET req.params.id: http://localhost:3000/accounts/{idConta} - consultar saldo<br>
