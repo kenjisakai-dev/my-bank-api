@@ -4,6 +4,7 @@ Instale as dependências:
 
 - express
 - nodemon
+  -winston
 
 ```bash
 npm install
