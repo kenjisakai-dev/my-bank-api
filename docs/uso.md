@@ -4,7 +4,9 @@ Instale as dependências:
 
 - express
 - nodemon
-  -winston
+- winston
+- cors
+- swagger-ui-express
 
 ```bash
 npm install
@@ -16,9 +18,10 @@ Inicie a API:
 nodemon index.js
 ```
 
-Pronto, vai criar o arquivo accounts.json e já podemos usar os endpoints:<br>
--POST req.body: http://localhost:3000/accounts - criar conta<br>
--DELETE req.params.id: http://localhost:3000/accounts/{idConta} - excluir conta<br>
--GET req.params.id: http://localhost:3000/accounts/{idConta} - consultar saldo<br>
--PATCH req.params.id: http://localhost:3000/accounts/{idConta} - depósito<br>
--PATCH req.params.id: http://localhost:3000/accounts/{idConta} - saque<br>
+Pronto, irá criar o arquivo accounts.json e já podemos usar os endpoints:<br>
+-POST req.body: http://localhost:3000/account - criar conta<br>
+-DELETE req.params.id: http://localhost:3000/account/{id} - excluir conta<br>
+-GET http://localhost:3000/account - consultar todas as contas<br>
+-GET req.params.id: http://localhost:3000/account/{id} - consultar uma conta<br>
+-PATCH req.body: http://localhost:3000/account - depósito<br>
+-PATCH req.body: http://localhost:3000/account - saque<br>
