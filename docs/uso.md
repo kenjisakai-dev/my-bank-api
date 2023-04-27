@@ -25,3 +25,6 @@ Pronto, irá criar o arquivo accounts.json e já podemos usar os endpoints:<br>
 -GET req.params.id: http://localhost:3000/account/{id} - consultar uma conta<br>
 -PATCH req.body: http://localhost:3000/account - depósito<br>
 -PATCH req.body: http://localhost:3000/account - saque<br>
+
+Podemos acessar a documentação e usar os endpoints
+link: http://localhost:3000/docs
