@@ -8,7 +8,7 @@ Esse Arquivo terá dois atributos:<br>
 nextId: armazena qual será o próximo id<br>
 accounts: armazena as contas no array<br>
 
-### Dentro do array accounts poderemos guardar algumas informações, como:<br>
+Dentro do array accounts poderemos guardar algumas informações, como:<br>
 
 id<br>
 name<br>
