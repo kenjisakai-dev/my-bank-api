@@ -13,6 +13,7 @@ async function getAccount(id) {
 }
 
 async function deleteAccount(id) {
+  await getAccount(id);
   await AccountRepository.deleteAccount(id);
 }
 
