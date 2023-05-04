@@ -41,12 +41,31 @@ const schema = buildSchema(`
     getAccounts: [Account]
     getAccount(id: Int): Account
   }
+  input AccountInput {
+    id: Int
+    name: String
+    balance: Float
+  }
+  type Mutation {
+    createAccount(account: AccountInput): Account
+    deleteAccount(id: Int): Boolean
+    updateAccount(account: AccountInput): Account
+  }
 `);
 
 const root = {
   getAccounts: () => AccountService.getAccounts(),
   getAccount(args) {
     return AccountService.getAccount(args.id);
+  },
+  createAccount({ account }) {
+    return AccountService.createAccount(account);
+  },
+  deleteAccount(args) {
+    return AccountService.deleteAccount(args.id);
+  },
+  updateAccount({ account }) {
+    return AccountService.updateAccount(account);
   },
 };
 
@@ -59,9 +78,9 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(
   '/graphql',
   graphqlHTTP({
-    schema: schema, // schema / como o nome é igual poderia colocar somente schema
-    rootValue: root, // consulta
-    graphiql: true, // interface de testes
+    schema: schema,
+    rootValue: root,
+    graphiql: true,
   })
 );
 
