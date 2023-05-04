@@ -7,7 +7,8 @@ import { swaggerDocument } from './docs/doc.js';
 import { promises as fs } from 'fs';
 const { readFile, writeFile } = fs;
 import { buildSchema } from 'graphql';
-import { graphHTTP } from 'express-graphql';
+import { graphqlHTTP } from 'express-graphql';
+import AccountService from './services/account.service.js';
 
 global.fileName = 'accounts.json';
 
@@ -42,6 +43,13 @@ const schema = buildSchema(`
   }
 `);
 
+const root = {
+  getAccounts: () => AccountService.getAccounts(),
+  getAccount(args) {
+    return AccountService.getAccount(args.id);
+  },
+};
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -50,9 +58,9 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(
   '/graphql',
-  graphHTTP({
+  graphqlHTTP({
     schema: schema, // schema / como o nome é igual poderia colocar somente schema
-    rootValue: null, // ?
+    rootValue: root, // consulta
     graphiql: true, // interface de testes
   })
 );
