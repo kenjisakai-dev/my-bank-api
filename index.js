@@ -6,9 +6,8 @@ import AccountRouter from './routes/account.route.js';
 import { swaggerDocument } from './docs/doc.js';
 import { promises as fs } from 'fs';
 const { readFile, writeFile } = fs;
-import { buildSchema } from 'graphql';
 import { graphqlHTTP } from 'express-graphql';
-import AccountService from './services/account.service.js';
+import Schema from './schema/index.js';
 
 global.fileName = 'accounts.json';
 
@@ -31,44 +30,6 @@ global.logger = winston.createLogger({
   ),
 });
 
-const schema = buildSchema(`
-  type Account {
-    id: Int
-    name: String
-    balance: Float
-  }
-  type Query {
-    getAccounts: [Account]
-    getAccount(id: Int): Account
-  }
-  input AccountInput {
-    id: Int
-    name: String
-    balance: Float
-  }
-  type Mutation {
-    createAccount(account: AccountInput): Account
-    deleteAccount(id: Int): Boolean
-    updateAccount(account: AccountInput): Account
-  }
-`);
-
-const root = {
-  getAccounts: () => AccountService.getAccounts(),
-  getAccount(args) {
-    return AccountService.getAccount(args.id);
-  },
-  createAccount({ account }) {
-    return AccountService.createAccount(account);
-  },
-  deleteAccount(args) {
-    return AccountService.deleteAccount(args.id);
-  },
-  updateAccount({ account }) {
-    return AccountService.updateAccount(account);
-  },
-};
-
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -78,8 +39,7 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(
   '/graphql',
   graphqlHTTP({
-    schema: schema,
-    rootValue: root,
+    schema: Schema,
     graphiql: true,
   })
 );
