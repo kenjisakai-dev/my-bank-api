@@ -6,7 +6,7 @@ import {
 } from 'graphql';
 
 const AccountInput = new GraphQLInputObjectType({
-  name: 'Account',
+  name: 'AccountInput',
   fields: () => ({
     id: {
       type: GraphQLInt,
