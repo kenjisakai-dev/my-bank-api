@@ -6,6 +6,12 @@
 
 Criar conta<br>
 POST (http://localhost:3030/account)
+```json
+{
+  "name": "Kenji",
+  "balance": 586
+}
+```
 
 Encerrar conta<br>
 DELETE (http://localhost:3030/account/{id})
@@ -64,7 +70,7 @@ Formato do arquivo accounts.json
     {
       "id": 1,
       "name": "Kenji"
-      "balance": 585
+      "balance": 586
     }
   ]
 }
