@@ -6,6 +6,7 @@
 
 Criar conta<br>
 POST (http://localhost:3030/account)
+
 ```json
 {
   "name": "Kenji",
@@ -24,6 +25,7 @@ GET (http://localhost:3030/account/{id})
 
 Atualizar o cadastro da conta<br>
 PUT (http://localhost:3030/account)
+
 ```json
 {
   "id": 1,
@@ -34,6 +36,7 @@ PUT (http://localhost:3030/account)
 
 Fazer o depósito e saque na conta<br>
 PATCH (http://localhost:3030/account/updateBalance)
+
 ```json
 {
   "id": 1,
@@ -52,11 +55,13 @@ PATCH (http://localhost:3030/account/updateBalance)
 ### Como usar a API
 
 Instale as Dependências
+
 ```bash
 npm install
 ```
 
 Iniciar a API
+
 ```bash
 nodemon index.js
 ```
@@ -64,6 +69,7 @@ nodemon index.js
 ---
 
 ### FrameWorks Usados
+
 - cors
 - express
 - nodemon
@@ -75,14 +81,16 @@ nodemon index.js
 ---
 
 ### Funcionamento do Bando de Dados
+
 Formato do arquivo accounts.json
+
 ```json
 {
   "nextId": 2,
   "accounts": [
     {
       "id": 1,
-      "name": "Kenji"
+      "name": "Kenji",
       "balance": 758
     }
   ]
