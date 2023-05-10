@@ -56,10 +56,7 @@ nodemon index.js
 ---
 
 ### Funcionamento do Bando de Dados
-Usamos o arquivo accounts.json como banco<br>
-- Um json que contém o nextId e um array de contas
-- Cada conta possuí o id, name e balance
-
+Formato do arquivo accounts.json
 ```json
 {
   "nextId": 5,
