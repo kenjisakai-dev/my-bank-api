@@ -7,7 +7,7 @@
 Criar uma conta<br>
 POST (http://localhost:3030/account)
 
-Fechar uma conta<br>
+Encerrar a conta<br>
 DELETE (http://localhost:3030/account/{id})
 
 Consultar o saldo de todas as contas<br>
