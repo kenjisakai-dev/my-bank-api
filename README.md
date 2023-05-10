@@ -24,9 +24,22 @@ GET (http://localhost:3030/account/{id})
 
 Atualizar o cadastro da conta<br>
 PUT (http://localhost:3030/account)
+```json
+{
+  "id": 1,
+  "name": "Kenji Sakai",
+  "balance": 586
+}
+```
 
 Fazer o depósito e saque na conta<br>
 PATCH (http://localhost:3030/account/updateBalance)
+```json
+{
+  "id": 1,
+  "balance": 758
+}
+```
 
 ---
 
@@ -70,7 +83,7 @@ Formato do arquivo accounts.json
     {
       "id": 1,
       "name": "Kenji"
-      "balance": 586
+      "balance": 758
     }
   ]
 }
