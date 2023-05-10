@@ -5,7 +5,7 @@ export const swaggerDocument = {
     version: '1.0.0',
     title: 'My Bank API description',
   },
-  host: 'localhost:3000',
+  host: 'localhost:3030',
   tags: [
     {
       name: 'account',

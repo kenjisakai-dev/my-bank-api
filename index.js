@@ -44,7 +44,7 @@ app.use(
   })
 );
 
-app.listen(3000, async () => {
+app.listen(3030, async () => {
   try {
     await readFile(global.fileName);
     logger.info('API Started!');
