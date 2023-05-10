@@ -59,3 +59,16 @@ nodemon index.js
 Usamos o arquivo accounts.json como banco<br>
 - Um json que contém o nextId e um array de contas
 - Cada conta possuí o id, name e balance
+
+```json
+{
+  nextId: 5,
+  accounts: [
+    {
+      id: 4,
+      name: Kenji
+      balance: 585
+    }
+  ]
+}
+```
