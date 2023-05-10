@@ -1,6 +1,6 @@
 # MyBank-api
 
-## Crud MyBank API armazena informações de uma conta de um banco
+## Crud MyBank API armazena informações de uma conta bancária
 
 ### Funcionalidades
 
