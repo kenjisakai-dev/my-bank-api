@@ -1,20 +1,61 @@
-# my-bank-api
+# MyBank-api
 
-## Crud My Bank API armazena informações de uma conta de um banco em um arquivo json (podemos armazenar o id, name e balance do proprietário)
+## Crud MyBank API armazena informações de uma conta de um banco
 
-### Funcionalidades:
+### Funcionalidades
 
-- Criar uma conta<br>
-- Excluir uma conta<br>
-- Consultar o saldo da conta<br>
-- Fazer o depósito e saque na conta<br>
+Criar uma conta<br>
+POST (http://localhost:3030/account)
 
-Mais informações na pasta docs
+Encerrar a conta<br>
+DELETE (http://localhost:3030/account/{id})
 
-### Ajuda:
+Consultar o saldo de todas as contas<br>
+GET (http://localhost:3030/account)
 
-- kenjisakai80@gmail.com
+Consultar o saldo da conta<br>
+GET (http://localhost:3030/account/{id})
 
-### Autores:
+Atualizar o cadastro da conta<br>
+PUT (http://localhost:3030/account)
 
-- Kenji Sakai
+Fazer o depósito e saque na conta<br>
+PATCH (http://localhost:3030/account/updateBalance)
+
+---
+
+### Documentação swagger da API
+
+(http://localhost:3030/docs)
+
+---
+
+### Como usar a API
+
+Instale as Dependências
+```bash
+npm install
+```
+
+Iniciar a API
+```bash
+nodemon index.js
+```
+
+---
+
+### FrameWorks Usados
+- cors
+- express
+- nodemon
+- express-graphql
+- graphql
+- swagger-ui-express
+- winston
+
+---
+
+### Funcionamento do Bando de Dados
+Usamos o arquivo accounts.json como banco<br>
+- Um json que contém o nextId e um array de contas
+- Cada conta possuí o id, name e balance
