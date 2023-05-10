@@ -4,10 +4,10 @@
 
 ### Funcionalidades
 
-Criar uma conta<br>
+Criar conta<br>
 POST (http://localhost:3030/account)
 
-Encerrar a conta<br>
+Encerrar conta<br>
 DELETE (http://localhost:3030/account/{id})
 
 Consultar o saldo de todas as contas<br>
