@@ -62,12 +62,12 @@ Usamos o arquivo accounts.json como banco<br>
 
 ```json
 {
-  nextId: 5,
-  accounts: [
+  "nextId": 5,
+  "accounts": [
     {
-      id: 4,
-      name: Kenji
-      balance: 585
+      "id": 4,
+      "name": "Kenji"
+      "balance": 585
     }
   ]
 }
