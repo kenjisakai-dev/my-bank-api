@@ -5,7 +5,7 @@
 ### Funcionalidades
 
 Criar uma conta<br>
-POST (http://localhost:3030/account
+POST (http://localhost:3030/account)
 
 Fechar uma conta<br>
 DELETE (http://localhost:3030/account/{id})
