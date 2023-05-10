@@ -59,10 +59,10 @@ nodemon index.js
 Formato do arquivo accounts.json
 ```json
 {
-  "nextId": 5,
+  "nextId": 2,
   "accounts": [
     {
-      "id": 4,
+      "id": 1,
       "name": "Kenji"
       "balance": 585
     }
