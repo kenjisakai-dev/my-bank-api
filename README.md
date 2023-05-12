@@ -66,6 +66,8 @@ Iniciar a API
 nodemon index.js
 ```
 
+Pronto, agora podemos usar o endpoints
+
 ---
 
 ### FrameWorks Usados
