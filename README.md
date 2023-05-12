@@ -1,6 +1,6 @@
 # MyBank-api
 
-## Crud MyBank API armazena informações de uma conta bancária
+## Crud MyBank API manipula informações de uma conta bancária
 
 ### Funcionalidades
 
@@ -14,15 +14,6 @@ POST (http://localhost:3030/account)
 }
 ```
 
-Encerrar conta<br>
-DELETE (http://localhost:3030/account/{id})
-
-Consultar o saldo de todas as contas<br>
-GET (http://localhost:3030/account)
-
-Consultar o saldo da conta<br>
-GET (http://localhost:3030/account/{id})
-
 Atualizar o cadastro da conta<br>
 PUT (http://localhost:3030/account)
 
@@ -34,7 +25,7 @@ PUT (http://localhost:3030/account)
 }
 ```
 
-Fazer o depósito e saque na conta<br>
+Fazer o depósito ou saque na conta<br>
 PATCH (http://localhost:3030/account/updateBalance)
 
 ```json
@@ -44,11 +35,102 @@ PATCH (http://localhost:3030/account/updateBalance)
 }
 ```
 
+Encerrar conta<br>
+DELETE (http://localhost:3030/account/{id})
+
+Consultar o saldo de todas as contas<br>
+GET (http://localhost:3030/account)
+
+Consultar o saldo da conta<br>
+GET (http://localhost:3030/account/{id})
+
+---
+
+### Também podemos usar o GraphQL (http://localhost:3030/graphql)
+
+Criar conta
+
+```graphiql
+mutation {
+  createAccount(account: {
+    name: "Kenji"
+    balance: 586
+  }) {
+    id
+    name
+    balance
+  }
+}
+```
+
+Atualizar o cadastro da conta<br>
+
+```graphiql
+mutation {
+  updateAccount(account: {
+    id: 1
+    name: "Kenji Sakai"
+    balance: 586
+  }) {
+    id
+    name
+    balance
+  }
+}
+```
+
+Fazer o depósito ou saque na conta
+
+```graphiql
+mutation {
+  updateBalance(account: {
+    id: 1
+    balance: 500
+  }) {
+    id
+    name
+    balance
+  }
+}
+```
+
+Encerrar conta
+
+```graphiql
+mutation {
+  deleteAccount(id: 2)
+}
+```
+
+Consultar o saldo de todas as contas
+
+```graphiql
+{
+  getAccounts {
+    id
+    name
+    balance
+  }
+}
+```
+
+Consultar o saldo da conta
+
+```graphiql
+{
+  getAccount(id: 1) {
+    id
+    name
+    balance
+  }
+}
+```
+
 ---
 
 ### Documentação swagger da API
 
-(http://localhost:3030/docs)
+(http://localhost:3030/swagger)
 
 ---
 
@@ -66,17 +148,19 @@ Iniciar a API
 nodemon index.js
 ```
 
+Pronto, agora podemos usar a API
+
 ---
 
 ### FrameWorks Usados
 
-- cors
 - express
 - nodemon
-- express-graphql
-- graphql
-- swagger-ui-express
 - winston
+- cors
+- swagger-ui-express
+- graphql
+- express-graphql
 
 ---
 
@@ -90,7 +174,7 @@ Formato do arquivo accounts.json
   "accounts": [
     {
       "id": 1,
-      "name": "Kenji",
+      "name": "Kenji Sakai",
       "balance": 758
     }
   ]
