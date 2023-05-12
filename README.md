@@ -85,7 +85,7 @@ Fazer o depósito ou saque na conta
 mutation {
   updateBalance(account: {
     id: 1
-    balance: 500
+    balance: 758
   }) {
     id
     name
