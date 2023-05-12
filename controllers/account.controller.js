@@ -4,7 +4,7 @@ async function createAccount(req, res, next) {
   try {
     const account = req.body;
 
-    if (!account.name || account.balance === null) {
+    if (!account.name || account.balance == null) {
       throw new Error(`Name e Balance são obrigatórios.`);
     }
 
@@ -27,7 +27,7 @@ async function getAccounts(req, res, next) {
 async function getAccount(req, res, next) {
   try {
     res.send(await AccountService.getAccount(req.params.id));
-    logger.info(`GET /account`);
+    logger.info(`GET /account/${req.params.id}`);
   } catch (err) {
     next(err);
   }
@@ -48,7 +48,7 @@ async function updateAccount(req, res, next) {
   try {
     const account = req.body;
 
-    if (!account.id === null || !account.name || account.balance === null) {
+    if (account.id == null || !account.name || account.balance == null) {
       throw new Error(`ID, Name e Balance são obrigatórios.`);
     }
 
@@ -63,7 +63,7 @@ async function updateBalance(req, res, next) {
   try {
     const account = req.body;
 
-    if (!account.id === null || account.balance === null) {
+    if (account.id == null || account.balance == null) {
       throw new Error(`ID e Balance são obrigatórios.`);
     }
 

@@ -20,12 +20,24 @@ const accountMutation = {
     type: Account,
     args: {
       account: {
-        name: 'Account',
+        name: 'account',
         type: AccountInput,
       },
     },
     resolve(_, args) {
       return accountResolver.updateAccount(args.account);
+    },
+  },
+  updateBalance: {
+    type: Account,
+    args: {
+      account: {
+        name: 'account',
+        type: AccountInput,
+      },
+    },
+    resolve(_, args) {
+      return accountResolver.updateBalance(args.account);
     },
   },
   deleteAccount: {
