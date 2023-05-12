@@ -68,17 +68,20 @@ nodemon index.js
 
 Pronto, agora podemos usar o endpoints
 
+Também podemos usar a API com o graphQL
+
 ---
 
 ### FrameWorks Usados
 
-- cors
 - express
 - nodemon
-- express-graphql
-- graphql
-- swagger-ui-express
 - winston
+- cors
+- graphql
+- express-graphql
+- swagger-ui-express
+
 
 ---
 
@@ -94,7 +97,7 @@ Formato do arquivo accounts.json
       "id": 1,
       "name": "Kenji",
       "balance": 758
-    }
-  ]
+    },
+  ],
 }
 ```
