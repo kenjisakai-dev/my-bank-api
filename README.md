@@ -10,7 +10,7 @@ POST (http://localhost:3030/account)
 ```json
 {
   "name": "Kenji",
-  "balance": 586
+  "balance": 586.34
 }
 ```
 
@@ -21,7 +21,7 @@ PUT (http://localhost:3030/account)
 {
   "id": 1,
   "name": "Kenji Sakai",
-  "balance": 586
+  "balance": 586.34
 }
 ```
 
@@ -31,7 +31,7 @@ PATCH (http://localhost:3030/account/updateBalance)
 ```json
 {
   "id": 1,
-  "balance": 758
+  "balance": 758.54
 }
 ```
 
@@ -54,7 +54,7 @@ Criar conta
 mutation {
   createAccount(account: {
     name: "Kenji"
-    balance: 586
+    balance: 586.34
   }) {
     id
     name
@@ -70,7 +70,7 @@ mutation {
   updateAccount(account: {
     id: 1
     name: "Kenji Sakai"
-    balance: 586
+    balance: 586.34
   }) {
     id
     name
@@ -85,7 +85,7 @@ Fazer o depósito ou saque na conta
 mutation {
   updateBalance(account: {
     id: 1
-    balance: 758
+    balance: 758.54
   }) {
     id
     name
@@ -175,7 +175,7 @@ Formato do arquivo accounts.json
     {
       "id": 1,
       "name": "Kenji Sakai",
-      "balance": 758
+      "balance": 758.54
     }
   ]
 }
