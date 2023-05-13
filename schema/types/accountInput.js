@@ -3,21 +3,44 @@ import {
   GraphQLString,
   GraphQLInt,
   GraphQLFloat,
+  GraphQLNonNull,
 } from 'graphql';
 
-const AccountInput = new GraphQLInputObjectType({
-  name: 'AccountInput',
+export const CreateAccountInput = new GraphQLInputObjectType({
+  name: 'CreateAccountInput',
   fields: () => ({
-    id: {
-      type: GraphQLInt,
-    },
     name: {
-      type: GraphQLString,
+      type: GraphQLNonNull(GraphQLString),
     },
     balance: {
-      type: GraphQLFloat,
+      type: GraphQLNonNull(GraphQLFloat),
     },
   }),
 });
 
-export default AccountInput;
+export const UpdateAccountInput = new GraphQLInputObjectType({
+  name: 'UpdateAccountInput',
+  fields: () => ({
+    id: {
+      type: GraphQLNonNull(GraphQLInt),
+    },
+    name: {
+      type: GraphQLNonNull(GraphQLString),
+    },
+    balance: {
+      type: GraphQLNonNull(GraphQLFloat),
+    },
+  }),
+});
+
+export const UpdateBalanceInput = new GraphQLInputObjectType({
+  name: 'UpdateBalanceInput',
+  fields: () => ({
+    id: {
+      type: GraphQLNonNull(GraphQLInt),
+    },
+    balance: {
+      type: GraphQLNonNull(GraphQLFloat),
+    },
+  }),
+});

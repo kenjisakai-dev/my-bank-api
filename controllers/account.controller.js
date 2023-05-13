@@ -37,7 +37,7 @@ async function deleteAccount(req, res, next) {
   try {
     await AccountService.deleteAccount(req.params.id);
 
-    res.send(`O ID ${req.params.id} foi deletado com sucesso.`);
+    res.send(`A conta do ID ${req.params.id} foi deletada com sucesso.`);
     logger.info(`DELETE /account/${req.params.id}`);
   } catch (err) {
     next(err);
