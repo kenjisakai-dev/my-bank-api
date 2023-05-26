@@ -44,8 +44,6 @@ GET (http://localhost:3030/account)
 Consultar o saldo da conta<br>
 GET (http://localhost:3030/account/{id})
 
----
-
 ### Também podemos usar o GraphQL (http://localhost:3030/graphql)
 
 Criar conta
@@ -128,12 +126,6 @@ Consultar o saldo da conta
 
 ---
 
-### Documentação swagger da API
-
-(http://localhost:3030/swagger)
-
----
-
 ### Como usar a API
 
 Instale as Dependências
@@ -145,10 +137,16 @@ npm install
 Iniciar a API
 
 ```bash
-nodemon index.js
+npm run dev
 ```
 
 Pronto, agora podemos usar a API
+
+---
+
+### Documentação swagger da API
+
+(http://localhost:3030/swagger)
 
 ---
 
