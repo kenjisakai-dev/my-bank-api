@@ -137,7 +137,7 @@ npm install
 Iniciar a API
 
 ```bash
-nodemon index.js
+npm run dev
 ```
 
 Pronto, agora podemos usar a API
