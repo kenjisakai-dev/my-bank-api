@@ -48,7 +48,7 @@ GET (http://localhost:3030/account/{id})
 
 Criar conta
 
-```graphiql
+```bash
 mutation {
   createAccount(account: {
     name: "Kenji"
@@ -63,7 +63,7 @@ mutation {
 
 Atualizar o cadastro da conta<br>
 
-```graphiql
+```bash
 mutation {
   updateAccount(account: {
     id: 1
@@ -79,7 +79,7 @@ mutation {
 
 Fazer o depósito ou saque na conta
 
-```graphiql
+```bash
 mutation {
   updateBalance(account: {
     id: 1
@@ -94,7 +94,7 @@ mutation {
 
 Encerrar conta
 
-```graphiql
+```bash
 mutation {
   deleteAccount(id: 2)
 }
@@ -102,7 +102,7 @@ mutation {
 
 Consultar o saldo de todas as contas
 
-```graphiql
+```bash
 {
   getAccounts {
     id
@@ -114,7 +114,7 @@ Consultar o saldo de todas as contas
 
 Consultar o saldo da conta
 
-```graphiql
+```bash
 {
   getAccount(id: 1) {
     id
