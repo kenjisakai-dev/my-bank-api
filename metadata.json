@@ -1,0 +1,14 @@
+{
+    "receita": ["RECEITA"],
+    "receitaGeral": ["RECEITA", "RECEITA GERAL", "SALDO"],
+    "despesa": ["DESPESA", "CARTÃO"],
+    "despesaGeral": [
+        "DESPESA",
+        "DESPESA GERAL",
+        "CARTÃO",
+        "INVESTIMENTO",
+        "RESERVA",
+        "PC"
+    ],
+    "cartao": ["CARTÃO"]
+}
