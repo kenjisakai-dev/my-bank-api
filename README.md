@@ -1,6 +1,6 @@
 # MyBank-API
 
-O MyBank API foi desenvolvido para gerenciar registros bancários oferecendo como funcionalidade a geração de relatórios detalhados com informações sobre receitas, despesas, cartões e calcular o balanço mensal dentro de um intervalo de tempo especificado.
+O MyBank API foi desenvolvido para gerenciar registros bancários oferecendo como funcionalidade a geração de relatórios detalhados com informações sobre receitas, despesas, cartões, saldo disponível e calcular o balanço mensal dentro de um intervalo de tempo especificado.
 
 ## Base de Dados
 
@@ -220,7 +220,7 @@ Os metadados definidos no arquivo `metadata.json` são utilizados na filtragem d
 </details>
 
 <details>
-  <summary>GET /report - Endpoint responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas, cartões e calcular o balanço mensal dentro de um intervalo de tempo especificado</summary>
+  <summary>GET /report - Endpoint responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas, saldo disponível e calcular o balanço mensal dentro de um intervalo de tempo especificado</summary>
 
 #### **Parâmetros da Requisição**
 
@@ -355,7 +355,7 @@ Ano
 </details>
 
 <details>
-  <summary>getReport - Consulta responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas, cartões e calcular o balanço mensal dentro de um intervalo de tempo especificado</summary>
+  <summary>getReport - Consulta responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas, saldo disponível e calcular o balanço mensal dentro de um intervalo de tempo especificado</summary>
 
 #### **Exemplos de uso dos parâmetros**
 
