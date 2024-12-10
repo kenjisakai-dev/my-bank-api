@@ -1,6 +1,6 @@
 # MyBank-API
 
-O MyBank API foi desenvolvido para gerenciar registros bancários oferecendo como principal funcionalidade a geração de um relatórios detalhado com informações sobre receitas, despesas e saldo disponível.
+O MyBank API foi desenvolvido para gerenciar registros bancários oferecendo como funcionalidade a geração de relatórios detalhados com informações sobre receitas, despesas, cartões e calcular o balanço mensal dentro de um intervalo de tempo especificado.
 
 ## Base de Dados
 
@@ -10,7 +10,7 @@ O banco de dados é representado como um array de objetos JSON. Cada objeto cont
 
 ```json
 {
-    "nextId": 7,
+    "nextId": 6,
     "registers": [
         {
             "id": 1,
@@ -52,15 +52,6 @@ O banco de dados é representado como um array de objetos JSON. Cada objeto cont
             "id": 5,
             "year": 2024,
             "month": "JAN",
-            "description": "Investimento",
-            "value": 800,
-            "category": "Investimento",
-            "type": "INVESTIMENTO"
-        },
-        {
-            "id": 6,
-            "year": 2024,
-            "month": "JAN",
             "description": "Mercado",
             "value": 875.79,
             "category": "Alimentação",
@@ -85,13 +76,13 @@ O banco de dados é representado como um array de objetos JSON. Cada objeto cont
     Utilizado para ajudar no desenvolvimento da API pois reinicia automaticamente a aplicação sempre que detecta uma alteração no código-fonte
 
 -   **`express-graphql`**  
-    A biblioteca e um middleware que permite a integração do GraphQL com o Express permitindo a criação a API com GraphQL
+    A biblioteca é um middleware que permite a integração do GraphQL com o Express permitindo a criação da API com GraphQL
 
 -   **`graphql`**
-    Utilizado para criar API com o GraphQL que oferece uma maneira eficiente, flexível e poderosa de consumir APIs
+    Utilizado para criar API com o GraphQL oferecendo uma maneira eficiente, flexível e poderosa de consumir APIs
 
 -   **`swagger-ui-express`**
-    Utilizado para integrar uma interface gráfica do Swagger com os endpoints documentados assim facilitando os testes na API
+    Utilizado para integrar uma interface gráfica do Swagger com os endpoints documentados facilitando os testes na API
 
 ## 🛠️ Como executar o projeto
 
@@ -117,7 +108,7 @@ O banco de dados é representado como um array de objetos JSON. Cada objeto cont
 
 ## Metadados para filtragem da geração do relatório
 
-Os metadados definidos no arquivo `metadata.json` são utilizados na filtragem dos dados de receita, despesa e saldo disponivel
+Os metadados definidos no arquivo `metadata.json` são utilizados na filtragem dos dados para calcular os valores de receita, despesa e calcular o balanço mensal dentro de um intervalo de tempo especificado.
 
 -   O campo `receita` define o filtro utilizado para calcular o valor total da receita
 -   O campo `despesa` define o filtro utilizado para calcular o valor total da despesa
@@ -229,7 +220,7 @@ Os metadados definidos no arquivo `metadata.json` são utilizados na filtragem d
 </details>
 
 <details>
-  <summary>GET /report - Endpoint responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas e saldo disponível dentro de um intervalo de tempo especificado</summary>
+  <summary>GET /report - Endpoint responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas, cartões e calcular o balanço mensal dentro de um intervalo de tempo especificado</summary>
 
 #### **Parâmetros da Requisição**
 
@@ -267,9 +258,8 @@ Ano
     "mes": ["JAN"],
     "receita": 3906.65,
     "despesa": 2519.7,
-    "saldo": 586.95,
+    "saldo": 1386.95,
     "cartao": 498.44,
-    "balanco": 1386.95,
     "receitas": [
         {
             "categoria": "Salário",
@@ -365,7 +355,21 @@ Ano
 </details>
 
 <details>
-  <summary>getReport - Consulta responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas e saldo disponível dentro de um intervalo de tempo especificado</summary>
+  <summary>getReport - Consulta responsável por fornecer um relatório financeiro, agrupando os registros bancários em receitas, despesas, cartões e calcular o balanço mensal dentro de um intervalo de tempo especificado</summary>
+
+#### **Exemplos de uso dos parâmetros**
+
+Mês
+
+-   Caso o mês não seja fornecido o relatório será criado baseado no mês atual
+-   Fornecer `*` no mês o relatório será criado baseado em todos os meses
+-   Fornecer vários meses `jan,fev,mar` o relatório será criado baseado nesses meses
+
+Ano
+
+-   Caso o ano não seja fornecido o relatório será criado baseado no ano atual
+-   Fornecer `*` no ano o relatório será criado baseado em todos os anos desde 2020
+-   Fornecer vários anos `2023,2024` o relatório será criado baseado nesses anos
 
 #### **Consulta GraphQL**
 
@@ -401,9 +405,8 @@ Ano
             "mes": ["JAN"],
             "receita": 3906.65,
             "despesa": 2519.7,
-            "saldo": 586.95,
+            "saldo": 1386.95,
             "cartao": 498.44,
-            "balanco": 1386.95,
             "receitas": [
                 {
                     "categoria": "Salário",
