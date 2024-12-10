@@ -273,22 +273,17 @@ export const swaggerDocument = {
                                 despesa: {
                                     type: 'number',
                                     format: 'float',
-                                    example: 2227.69,
+                                    example: 2519.7,
                                 },
-                                saldo: {
+                                balanco: {
                                     type: 'number',
                                     format: 'float',
-                                    example: 2113.5,
+                                    example: 1386.95,
                                 },
                                 cartao: {
                                     type: 'number',
                                     format: 'float',
                                     example: 498.44,
-                                },
-                                balanco: {
-                                    type: 'number',
-                                    format: 'float',
-                                    example: 1678.96,
                                 },
                                 receitas: {
                                     type: 'array',
