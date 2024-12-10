@@ -15,12 +15,9 @@ async function getReport(month, year) {
     }
 
     const receita = getReportTotalByType(registers, metadata.receita);
-    const receitaGeral = getReportTotalByType(registers, metadata.receitaGeral);
     const despesa = getReportTotalByType(registers, metadata.despesa);
-    const despesaGeral = getReportTotalByType(registers, metadata.despesaGeral);
     const cartao = getReportTotalByType(registers, metadata.cartao);
     const balanco = standardizeValue(receita - despesa);
-    const saldo = standardizeValue(receitaGeral - despesaGeral);
     const receitas = getReportByCategory(registers, metadata.receita);
     const despesas = getReportByCategory(registers, metadata.despesa);
 
@@ -29,9 +26,8 @@ async function getReport(month, year) {
         mes: months,
         receita,
         despesa,
-        saldo,
-        cartao,
         balanco,
+        cartao,
         receitas,
         despesas,
     };

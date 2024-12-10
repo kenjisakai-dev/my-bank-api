@@ -1,5 +1,5 @@
 {
-    "nextId": 17,
+    "nextId": 16,
     "registers": [
         {
             "id": 1,
@@ -41,15 +41,6 @@
             "id": 5,
             "year": 2024,
             "month": "JAN",
-            "description": "Investimento",
-            "value": 800,
-            "category": "Investimento",
-            "type": "INVESTIMENTO"
-        },
-        {
-            "id": 6,
-            "year": 2024,
-            "month": "JAN",
             "description": "Mercado",
             "value": 875.79,
             "category": "Alimentação",
@@ -57,7 +48,7 @@
         },
 
         {
-            "id": 7,
+            "id": 6,
             "year": 2024,
             "month": "JAN",
             "description": "Gasolina",
@@ -66,7 +57,7 @@
             "type": "DESPESA"
         },
         {
-            "id": 8,
+            "id": 7,
             "year": 2024,
             "month": "JAN",
             "description": "Fatura Tim",
@@ -75,7 +66,7 @@
             "type": "DESPESA"
         },
         {
-            "id": 9,
+            "id": 8,
             "year": 2024,
             "month": "JAN",
             "description": "Internet",
@@ -85,7 +76,7 @@
         },
 
         {
-            "id": 10,
+            "id": 9,
             "year": 2024,
             "month": "JAN",
             "description": "Cabeleireiro",
@@ -94,7 +85,7 @@
             "type": "DESPESA"
         },
         {
-            "id": 11,
+            "id": 10,
             "year": 2024,
             "month": "JAN",
             "description": "Convênio",
@@ -104,7 +95,7 @@
         },
 
         {
-            "id": 12,
+            "id": 11,
             "year": 2024,
             "month": "JAN",
             "description": "Premiere",
@@ -113,7 +104,7 @@
             "type": "CARTÃO"
         },
         {
-            "id": 13,
+            "id": 12,
             "year": 2024,
             "month": "JAN",
             "description": "Suporte Monitor",
@@ -122,7 +113,7 @@
             "type": "CARTÃO"
         },
         {
-            "id": 14,
+            "id": 13,
             "year": 2024,
             "month": "JAN",
             "description": "Ingresso",
@@ -132,7 +123,7 @@
         },
 
         {
-            "id": 15,
+            "id": 14,
             "year": 2024,
             "month": "JAN",
             "description": "Xbox Game Pass",
@@ -141,7 +132,7 @@
             "type": "CARTÃO"
         },
         {
-            "id": 16,
+            "id": 15,
             "year": 2024,
             "month": "JAN",
             "description": "Jogo",
